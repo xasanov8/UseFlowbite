@@ -12,7 +12,19 @@ export class CrudService {
 
   constructor(private http : HttpClient) {}
 
+  id:number = 0;
+
+  user?:User;
+
   getAll(): Observable<User[]> { 
     return this.http.get<User[]>(this.baseUrl);
   }
+
+  // getById() { 
+  //   return this.http.get<User>(`${this.baseUrl}/${this.id}`);
+  // }
+
+  // create() { 
+  //   return this.http.get<User>(this.baseUrl,this.user);
+  // }
 }
